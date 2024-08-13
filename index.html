@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Calendar</title>
+    <link rel="icon" href="https://i.postimg.cc/kMjbQXNJ/Screenshot-2024-08-13-21-47-31-837-com-miui-gallery.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        .calendar-container {
+            background-color: #4a90e2;
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 400px;
+            width: 85%;
+            height: 150px;
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #month-year {
+            font-family: monospace;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+        }
+
+        .current-day {
+            background-color: #ff8a00;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #day-number {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .week-days {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .day {
+    width: 30px;
+    text-align: center;
+    padding: 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: cursive;
+    user-select: none; /* Prevents text selection */
+    outline: none; /* Removes default outline */
+}
+
+.day:focus {
+    outline: none; /* Ensures outline is not shown when focused */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="header">
+            <h2 id="month-year"></h2>
+            <div class="current-day">
+                <p id="day-number"></p>
+            </div>
+        </div>
+        <div class="week-days">
+            <div class="day" id="sunday" onclick="location.href='https://githubarvind01.github.io/Sunday-To-Do-list/'">Sun</div>
+            <div class="day" id="monday" onclick="location.href='https://githubarvind01.github.io/Monday-To-Do-list-/'">Mon</div>
+            <div class="day" id="tuesday" onclick="location.href='https://githubarvind01.github.io/Tuesday-To-Do-list/'">Tue</div>
+            <div class="day" id="wednesday" onclick="location.href='https://githubarvind01.github.io/Wednesday-To-Do-list/'">Wed</div>
+            <div class="day" id="thursday" onclick="location.href='https://githubarvind01.github.io/Thursday-To-Do-list/'">Thu</div>
+            <div class="day" id="friday" onclick="location.href='https://githubarvind01.github.io/Friday-To-Do-list/'">Fri</div>
+            <div class="day" id="saturday" onclick="location.href='https://githubarvind01.github.io/Saturday-To-Do-list/'">Sat</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const today = new Date();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            
+            const monthYear = document.getElementById('month-year');
+            const dayNumber = document.getElementById('day-number');
+
+            monthYear.innerText = `${monthNames[today.getMonth()]} ${today.getFullYear()}`;
+            dayNumber.innerText = today.getDate();
+        });
+    </script>
+</body>
+</html>
